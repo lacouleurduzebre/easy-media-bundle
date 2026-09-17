@@ -216,7 +216,7 @@ trait Upload
         $errors = [];
         $warnings = [];
 
-        $identifier = trim($request->get('dzuuid', ''));
+        $identifier = trim($request->request->get('dzuuid', ''));
         $fileChunksFolder = sprintf('%s/%s', $chunksDir, $identifier);
         $filesystem = new Filesystem();
         $filesystem->mkdir(Path::normalize($fileChunksFolder));
@@ -226,11 +226,11 @@ trait Upload
         $extension = isset($info['extension']) ? '.'.strtolower($info['extension']) : '';
         $filename = $info['filename'];
 
-        $totalSize = (int) $request->get('dztotalfilesize', 0);
-        $totalChunks = (int) $request->get('dztotalchunkcount', 0);
-        $chunkInd = (int) $request->get('dzchunkindex', 0);
-        $chunkSize = (int) $request->get('dzchunksize', 0);
-        $startByte = (int) $request->get('dzchunkbyteoffset', 0);
+        $totalSize = (int) $request->request->get('dztotalfilesize', 0);
+        $totalChunks = (int) $request->request->get('dztotalchunkcount', 0);
+        $chunkInd = (int) $request->request->get('dzchunkindex', 0);
+        $chunkSize = (int) $request->request->get('dzchunksize', 0);
+        $startByte = (int) $request->request->get('dzchunkbyteoffset', 0);
 
         $chunkFile = sprintf('%s/%s.part%d', $fileChunksFolder, $filename, $chunkInd);
 
