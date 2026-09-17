@@ -134,11 +134,11 @@ easy_media:
 # config/routes/easy_media.yaml
 
 easy_media:
-  resource: '@EasyMediaBundle/Resources/config/routes.xml'
+  resource: '@EasyMediaBundle/Resources/config/routes.php'
   prefix: /admin
 
 easy_media_public:
-  resource: '@EasyMediaBundle/Resources/config/public_routes.xml'
+  resource: '@EasyMediaBundle/Resources/config/public_routes.php'
   prefix: /
 ```
 
