@@ -6,10 +6,6 @@ use Adeliom\EasyMediaBundle\Controller\MediaController;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 return static function (RoutingConfigurator $routes): void {
-    $routes->add('media.index', '/easymedia/medias/')
-        ->controller([MediaController::class, 'index'])
-        ->methods(['GET'])
-    ;
     $routes->add('media.browse', '/easymedia/medias/browse')
         ->controller([MediaController::class, 'browse'])
         ->methods(['GET'])

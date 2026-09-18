@@ -216,7 +216,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         ...
-        yield MenuItem::linkToRoute('Medias', 'fa fa-picture-o', 'media.index');
+        yield MenuItem::linkToRoute('Medias', 'fa fa-picture-o', 'admin_media_index');
 
         ...
 ```

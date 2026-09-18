@@ -18,6 +18,7 @@ use Adeliom\EasyMediaBundle\Service\EasyMediaHelper;
 use Adeliom\EasyMediaBundle\Service\EasyMediaManager;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Persistence\ObjectManager;
+use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminRoute;
 use League\Flysystem\FilesystemOperator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
@@ -75,6 +76,7 @@ class MediaController extends AbstractController
         $this->translator = $translator;
     }
 
+    #[AdminRoute(path: '/easymedia/medias', name: 'media_index')]
     public function index(): Response
     {
         return $this->render('@EasyMedia/manager_view.html.twig');
